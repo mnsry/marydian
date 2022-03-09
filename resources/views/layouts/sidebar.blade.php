@@ -28,14 +28,14 @@
                 </li>
             @else
                 <li>
-                    <a href="#" class="sidenav__menu-url">{{ Auth::user()->name }}</a>
+                    <a href="{{route('home')}}" class="sidenav__menu-url">{{ Auth::user()->name }}</a>
                     <button class="sidenav__menu-toggle" aria-haspopup="true" aria-label="Open dropdown"><i class="ui-arrow-down"></i></button>
                     <ul class="sidenav__menu-dropdown">
                         <li>
                             <a class="sidenav__menu-url" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                                خروج از سیستم
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
