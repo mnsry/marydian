@@ -105,6 +105,26 @@
                             </ul> <!-- end megamenu -->
                         </li>
 
+                        @auth
+                            <li class="nav__dropdown">
+                                <a href="{{route('home')}}">{{ Auth::user()->name }}</a>
+                                <ul class="nav__dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
+                                    </li>
+
+                                </ul>
+                            </li>
+                        @endauth
+
                     </ul> <!-- end menu -->
                 </nav> <!-- end nav-wrap -->
 

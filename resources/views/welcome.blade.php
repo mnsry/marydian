@@ -6,11 +6,13 @@
 
 @section('content')
 
-    <div class="main-container container pt-24" id="main-container">
-
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        021
-
+    <div class="main-container container pt-80 pb-80" id="main-container">
+        <!-- post content -->
+        <div class="blog__content mb-72">
+            <div class="container text-center">
+                <h1>خوش آمدید</h1>
+            </div>
+        </div>
     </div>
 
 @endsection

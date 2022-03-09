@@ -7,21 +7,21 @@ Route::get('/', function () {
 })->name('welcome');
 
 Route::get('page', function () {
-    return view('welcome');
+    return view('page.index');
 })->name('page');
 
 Route::get('contactus', function () {
-    return view('welcome');
+    return view('contactus');
 })->name('contactus');
 
 Route::get('aboutme', function () {
-    return view('welcome');
+    return view('aboutme');
 })->name('aboutme');
-
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
