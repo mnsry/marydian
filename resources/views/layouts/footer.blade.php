@@ -3,15 +3,13 @@
         <div class="footer__widgets">
             <div class="row">
 
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-4 col-md-6">
                     <aside class="widget widget-logo">
                         <a href="index.html">
                             <img src="{{ asset('assets/img/logo_default_white.png') }}" srcset="{{ asset('assets/img/logo_default_white.png 1x, ') }}{{ asset('assets/img/logo_default_white@2x.png 2x') }}" class="logo__img" alt="">
                         </a>
                         <p class="copyright">
-
-                            استفاده از مطالب تاپ‌کالا مگ برای مقاصد غیرتجاری با ذکر نام تاپ‌کالا مگ و لینک به منبع بلامانع است. حقوق این سایت به شرکت نوآوران فن‌آوازه (فروشگاه آنلاین تاپ‌کالا) تعلق دارد.
-
+                            سایت دانش یار برای کمک به شما عزیزان در ضمینه حل تمرین و دانلود دروس و نمونه سوالات امتحانی و هرگونه راهنمایی برای شما دوستان ساخته شده است تا شما بتوانید هر ساعت از شبانه روز با ما در ارتباط باشید و راهنمایی کامل را کسب کنید.
                         </p>
                         <div class="socials socials--large socials--rounded mb-24">
                             <a href="#" class="social social-facebook" aria-label="facebook"><i class="ui-facebook"></i></a>
@@ -23,79 +21,21 @@
                     </aside>
                 </div>
 
-                <div class="col-lg-2 col-md-6">
+                <div class="col-lg-4 d-none d-lg-block">
                     <aside class="widget widget_nav_menu">
-                        <h4 class="widget-title">هشتگ های داغ</h4>
+                        <h4 class="widget-title">لینک های پر کاربرد</h4>
                         <ul>
-                            <li><a href="about.html">#تکنولوزی</a></li>
-                            <li><a href="contact.html">#موبایل</a></li>
-                            <li><a href="categories.html">#کتاب</a></li>
-                            <li><a href="shortcodes.html">#هنر</a></li>
-                            <li><a href="shortcodes.html">#زیبایی</a></li>
-                            <li><a href="shortcodes.html">#دیجیتال</a></li>
+                            <li><a target="_blank" href="https://soft98.ir">#سایت برای دانلود نرم افزار</a></li>
+                            <li><a target="_blank" href="https://digikala.com">#سایت خرید کالا</a></li>
+                            <li><a target="_blank" href="https://time.ir">#سایت نمایش ساعت وتقویم ایران</a></li>
+                            <li><a target="_blank" href="https://soundcloud.com">#سایت پخش آنلاین موزیک</a></li>
+                            <li><a target="_blank" href="https://web.whatsapp.com/">#واتساپ وبسایت</a></li>
+                            <li><a target="_blank" href="https://ganjoor.net/ferdousi/shahname/aghaz">#فردوسی شاهنامه</a></li>
                         </ul>
                     </aside>
                 </div>
 
                 <div class="col-lg-4 col-md-6">
-                    <aside class="widget widget-popular-posts">
-                        <h4 class="widget-title">محبوب ترین مقالات</h4>
-                        <ul class="post-list-small">
-                            <li class="post-list-small__item">
-                                <article class="post-list-small__entry clearfix">
-                                    <div class="post-list-small__img-holder">
-                                        <div class="thumb-container thumb-100">
-                                            <a href="single-post.html">
-                                                <img data-src="{{ asset('assets/img/content/thumb/post-8.jpg') }}" src="{{ asset('assets/img/empty.png') }}" alt="" class="post-list-small__img--rounded lazyload">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="post-list-small__body">
-                                        <h3 class="post-list-small__entry-title">
-                                            <a href="single-post.html">گوشی تاشو هواوی میت ایکس در تاریخ مقرر عرضه می‌شود</a>
-                                        </h3>
-                                        <ul class="entry__meta">
-                                            <li class="entry__meta-author">
-                                                <span>نویسنده:</span>
-                                                <a href="#">بهرامی راد</a>
-                                            </li>
-                                            <li class="entry__meta-date">
-                                                ۴ اردیبهشت ۱۳۹۸
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </article>
-                            </li>
-                            <li class="post-list-small__item">
-                                <article class="post-list-small__entry clearfix">
-                                    <div class="post-list-small__img-holder">
-                                        <div class="thumb-container thumb-100">
-                                            <a href="single-post.html">
-                                                <img data-src="{{ asset('assets/img/content/thumb/post-2.jpg') }}" src="{{ asset('assets/img/empty.png') }}" alt="" class="post-list-small__img--rounded lazyload">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="post-list-small__body">
-                                        <h3 class="post-list-small__entry-title">
-                                            <a href="single-post.html">نمایشگر وان پلاس ۷ قرار است ما را شگفت‌زده کند!</a>
-                                        </h3>
-                                        <ul class="entry__meta">
-                                            <li class="entry__meta-author">
-                                                <span>نویسنده:</span>
-                                                <a href="#">بهرامی راد</a>
-                                            </li>
-                                            <li class="entry__meta-date">
-                                                ۴ اردیبهشت ۱۳۹۸
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </article>
-                            </li>
-                        </ul>
-                    </aside>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
                     <aside class="widget widget_mc4wp_form_widget">
                         <h4 class="widget-title">خبرنامه</h4>
                         <p class="newsletter__text">

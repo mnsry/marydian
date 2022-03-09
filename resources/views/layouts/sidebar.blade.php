@@ -11,30 +11,33 @@
     <nav class="sidenav__menu-container">
         <ul class="sidenav__menu" role="menubar">
             <li>
-                <a href="#" class="sidenav__menu-url">صفحه اصلی</a>
+                <a href="{{ route('welcome') }}" class="sidenav__menu-url">صفحه اصلی</a>
             </li>
-            <li>
-                <a href="#" class="sidenav__menu-url">صفحات</a>
-                <button class="sidenav__menu-toggle" aria-haspopup="true" aria-label="Open dropdown"><i class="ui-arrow-down"></i></button>
-                <ul class="sidenav__menu-dropdown">
-                    <li><a href="about.html" class="sidenav__menu-url">درباره ما</a></li>
-                    <li><a href="contact.html" class="sidenav__menu-url">تماس با ما</a></li>
-                    <li><a href="search-results.html" class="sidenav__menu-url">نتایج جستجو</a></li>
-                    <li><a href="categories.html" class="sidenav__menu-url">دسته بندی مطالب</a></li>
-                    <li><a href="single-post.html" class="sidenav__menu-url">نمایش مطلب</a></li>
-                    <li><a href="404.html" class="sidenav__menu-url">404</a></li>
-                </ul>
-            </li>
+{{--            <li>--}}
+{{--                <a href="#" class="sidenav__menu-url">صفحات</a>--}}
+{{--                <button class="sidenav__menu-toggle" aria-haspopup="true" aria-label="Open dropdown"><i class="ui-arrow-down"></i></button>--}}
+{{--                <ul class="sidenav__menu-dropdown">--}}
+{{--                    <li><a href="about.html" class="sidenav__menu-url">درباره ما</a></li>--}}
+{{--                    <li><a href="contact.html" class="sidenav__menu-url">تماس با ما</a></li>--}}
+{{--                    <li><a href="search-results.html" class="sidenav__menu-url">نتایج جستجو</a></li>--}}
+{{--                    <li><a href="categories.html" class="sidenav__menu-url">دسته بندی مطالب</a></li>--}}
+{{--                    <li><a href="single-post.html" class="sidenav__menu-url">نمایش مطلب</a></li>--}}
+{{--                    <li><a href="404.html" class="sidenav__menu-url">404</a></li>--}}
+{{--                </ul>--}}
+{{--            </li>--}}
 
             <!-- Categories -->
             <li>
-                <a href="#" class="sidenav__menu-url">تکنولوژی</a>
+                <a href="{{ route('page') }}" class="sidenav__menu-url">مقالات</a>
             </li>
             <li>
-                <a href="#" class="sidenav__menu-url">زیبایی و سلامت</a>
+                <a href="{{ route('contactus') }}" class="sidenav__menu-url">تماس باما</a>
             </li>
             <li>
-                <a href="#" class="sidenav__menu-url">موبایل</a>
+                <a href="{{ route('aboutme') }}" class="sidenav__menu-url">درباره ما</a>
+            </li>
+            <li>
+                <a href="{{ route('login') }}" class="sidenav__menu-url">ورود به سیستم</a>
             </li>
         </ul>
     </nav>

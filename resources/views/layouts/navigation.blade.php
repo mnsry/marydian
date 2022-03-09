@@ -5,14 +5,14 @@
             <div class="flex-parent">
 
                 <!-- Side Menu Button -->
-                <button class="nav-icon-toggle" id="nav-icon-toggle" aria-label="Open side menu">
+                <button class="nav-icon-toggle d-lg-none" id="nav-icon-toggle" aria-label="Open side menu">
                             <span class="nav-icon-toggle__box">
                                 <span class="nav-icon-toggle__inner"></span>
                             </span>
                 </button>
 
                 <!-- Logo -->
-                <a href="index.html" class="logo">
+                <a href="{{ route('welcome') }}" class="logo">
                     <img class="logo__img" src="{{ asset('assets/img/logo_default.png') }}" alt="logo">
                 </a>
 
@@ -21,11 +21,11 @@
                     <ul class="nav__menu">
 
                         <li class="active">
-                            <a href="index.html">صفحه اصلی</a>
+                            <a href="{{ route('welcome') }}">صفحه اصلی</a>
                         </li>
 
                         <li class="nav__dropdown">
-                            <a href="#">تکنولوژی</a>
+                            <a href="{{ route('page') }}">صفحات</a>
                             <ul class="nav__dropdown-menu nav__megamenu">
                                 <li>
                                     <div class="nav__megamenu-wrap">
@@ -34,15 +34,15 @@
                                             <div class="col nav__megamenu-item">
                                                 <article class="entry">
                                                     <div class="entry__img-holder">
-                                                        <a href="single-post.html">
-                                                            <img src="{{ asset('assets/img/content/thumb/post-1.jpg') }}" alt="" class="entry__img">
+                                                        <a href="{{ route('page') }}">
+                                                            <img src="{{ asset('assets/img/page/page.png') }}" alt="" class="entry__img">
                                                         </a>
-                                                        <a href="categories.html" class="entry__meta-category entry__meta-category--label entry__meta-category--align-in-corner entry__meta-category--violet">تکنولوژی</a>
+                                                        <a href="{{ route('page') }}" class="entry__meta-category entry__meta-category--label entry__meta-category--align-in-corner entry__meta-category--violet">صفحات سایت</a>
                                                     </div>
 
                                                     <div class="entry__body">
                                                         <h2 class="entry__title">
-                                                            <a href="single-post.html">چرا لانچرهای اندروید دیگر محبوبیت گذشته را ندارند؟</a>
+                                                            <a href="{{ route('page') }}">از همه صفحات سایت با خبر باشید !</a>
                                                         </h2>
                                                     </div>
                                                 </article>
@@ -51,15 +51,15 @@
                                             <div class="col nav__megamenu-item">
                                                 <article class="entry">
                                                     <div class="entry__img-holder">
-                                                        <a href="single-post.html">
-                                                            <img src="{{ asset('assets/img/content/thumb/post-2.jpg') }}" alt="" class="entry__img">
+                                                        <a href="{{ route('contactus') }}">
+                                                            <img src="{{ asset('assets/img/page/contactus.png') }}" alt="" class="entry__img">
                                                         </a>
-                                                        <a href="categories.html" class="entry__meta-category entry__meta-category--label entry__meta-category--align-in-corner entry__meta-category--purple">تکنولوژی</a>
+                                                        <a href="{{ route('contactus') }}" class="entry__meta-category entry__meta-category--label entry__meta-category--align-in-corner entry__meta-category--purple">تماس باما</a>
                                                     </div>
 
                                                     <div class="entry__body">
                                                         <h2 class="entry__title">
-                                                            <a href="single-post.html">نمایشگر وان پلاس ۷ قرار است ما را شگفت‌زده کند!</a>
+                                                            <a href="{{ route('contactus') }}">لطفا از طریق ارسال فرم با ما در ارتباط باشید</a>
                                                         </h2>
                                                     </div>
                                                 </article>
@@ -68,15 +68,15 @@
                                             <div class="col nav__megamenu-item">
                                                 <article class="entry">
                                                     <div class="entry__img-holder">
-                                                        <a href="single-post.html">
-                                                            <img src="{{ asset('assets/img/content/thumb/post-3.jpg') }}" alt="" class="entry__img">
+                                                        <a href="{{ route('aboutme') }}">
+                                                            <img src="{{ asset('assets/img/page/aboutme.png') }}" alt="" class="entry__img">
                                                         </a>
-                                                        <a href="categories.html" class="entry__meta-category entry__meta-category--label entry__meta-category--align-in-corner entry__meta-category--blue">تکنولوژی</a>
+                                                        <a href="{{ route('aboutme') }}" class="entry__meta-category entry__meta-category--label entry__meta-category--align-in-corner entry__meta-category--blue">درباره ما</a>
                                                     </div>
 
                                                     <div class="entry__body">
                                                         <h2 class="entry__title">
-                                                            <a href="single-post.html">با دو هزار یورو، می‌توان چه محصولاتی دیگری به جای گلکسی فولد خرید؟</a>
+                                                            <a href="{{ route('aboutme') }}">هدف ما پیشرفت و اموزش فرزند شماست برای بهترین شدن</a>
                                                         </h2>
                                                     </div>
                                                 </article>
@@ -85,15 +85,15 @@
                                             <div class="col nav__megamenu-item">
                                                 <article class="entry">
                                                     <div class="entry__img-holder">
-                                                        <a href="single-post.html">
-                                                            <img src="{{ asset('assets/img/content/thumb/post-4.jpg') }}" alt="" class="entry__img">
+                                                        <a href="{{ route('login') }}">
+                                                            <img src="{{ asset('assets/img/page/login.png') }}" alt="" class="entry__img">
                                                         </a>
-                                                        <a href="categories.html" class="entry__meta-category entry__meta-category--label entry__meta-category--align-in-corner entry__meta-category--green">تکنولوژی</a>
+                                                        <a href="{{ route('login') }}" class="entry__meta-category entry__meta-category--label entry__meta-category--align-in-corner entry__meta-category--green">ورود به سیستم</a>
                                                     </div>
 
                                                     <div class="entry__body">
                                                         <h2 class="entry__title">
-                                                            <a href="single-post.html">۶ ویژگی برتر رابط کاربری One UI سامسونگ</a>
+                                                            <a href="{{ route('login') }}">برای استفاده از امکانات سایت لطفا وارد به سیستم شوید</a>
                                                         </h2>
                                                     </div>
                                                 </article>
@@ -104,19 +104,6 @@
                                 </li>
                             </ul> <!-- end megamenu -->
                         </li>
-
-                        <li class="nav__dropdown">
-                            <a href="#">صفحات</a>
-                            <ul class="nav__dropdown-menu">
-                                <li><a href="about.html">درباره ما</a></li>
-                                <li><a href="contact.html">تماس با ما</a></li>
-                                <li><a href="search-results.html">نتایج جستجو</a></li>
-                                <li><a href="categories.html">دسته بندی مطالب</a></li>
-                                <li><a href="single-post.html">نمایش مطلب</a></li>
-                                <li><a href="404.html">404</a></li>
-                            </ul>
-                        </li>
-
 
                     </ul> <!-- end menu -->
                 </nav> <!-- end nav-wrap -->
