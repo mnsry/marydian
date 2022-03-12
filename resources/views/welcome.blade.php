@@ -14,11 +14,9 @@
                 <br>
                 <h1>خوش آمدید</h1>
             </div>
-        </div>
-
-        <div>
             {!! setting('site.home_content') !!}
         </div>
+
     </div>
 
 @endsection
