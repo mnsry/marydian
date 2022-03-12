@@ -11,8 +11,13 @@
         <div class="blog__content mb-72">
             <div class="container text-center">
                 <img src="{{ Voyager::Image(setting('site.home_banner')) }}" alt="">
+                <br>
                 <h1>خوش آمدید</h1>
             </div>
+        </div>
+
+        <div>
+            {!! setting('site.home_content') !!}
         </div>
     </div>
 
