@@ -13,7 +13,7 @@
 
                 <!-- Logo -->
                 <a href="{{ route('welcome') }}" class="logo">
-                    <img class="logo__img" src="{{ asset('assets/img/logo_default.png') }}" alt="logo">
+                    <img class="logo__img" src="{{ Voyager::Image(setting('site.logo')) }}" alt="logo">
                 </a>
 
                 <!-- Nav-wrap -->
