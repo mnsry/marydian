@@ -10,6 +10,10 @@ Route::get('page', function () {
     return view('page.index');
 })->name('page');
 
+Route::get('page/{page}', function (\TCG\Voyager\Models\Page $page) {
+    return view('page.show', [ 'page'=>$page]);
+})->name('page.show');
+
 Route::get('contactus', function () {
     return view('contactus');
 })->name('contactus');
