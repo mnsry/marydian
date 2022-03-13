@@ -95,7 +95,10 @@
                             <div class="entry__tags">
                                 <i class="ui-tags"></i>
                                 <span class="entry__tags-label">برچسب ها:</span>
-                                <a href="#" rel="tag">{{ $page->meta_keywords }}</a>
+                                @foreach( explode(',', $page->meta_keywords) as $key)
+                                    <a href="#" rel="tag">{{ $key }}</a>
+                                @endforeach
+
                             </div> <!-- end tags -->
                         </div> <!-- end entry article -->
                     </div> <!-- end entry article wrap -->
@@ -129,7 +132,7 @@
                         </div>
 
                         <p class="comment-form-submit">
-                            <input type="submit" class="btn btn-lg btn-color btn-button" value="ارسال دیدگاه" id="submit-message">
+                            <input type="submit" class="btn btn-lg btn-color btn-button" value="ارسال دیدگاه" id="submit-message" disabled>
                         </p>
 
                     </form>
