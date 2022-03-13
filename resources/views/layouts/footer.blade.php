@@ -5,8 +5,8 @@
 
                 <div class="col-lg-4 col-md-6">
                     <aside class="widget widget-logo">
-                        <a href="index.html">
-                            <img src="{{ asset('assets/img/logo_default_white.png') }}" srcset="{{ asset('assets/img/logo_default_white.png 1x, ') }}{{ asset('assets/img/logo_default_white@2x.png 2x') }}" class="logo__img" alt="">
+                        <a href="{{ route('welcome') }}">
+                            <img src="{{ Voyager::Image(setting('site.logo')) }}" class="logo__img" alt="">
                         </a>
                         <p class="copyright">
                             سایت دانش یار برای کمک به شما عزیزان در ضمینه حل تمرین و دانلود دروس و نمونه سوالات امتحانی و هرگونه راهنمایی برای شما دوستان ساخته شده است تا شما بتوانید هر ساعت از شبانه روز با ما در ارتباط باشید و راهنمایی کامل را کسب کنید.
@@ -48,7 +48,7 @@
                                     <input type="email" name="EMAIL" placeholder="ایمیل" required="">
                                 </div>
                                 <div class="form-group">
-                                    <input type="submit" class="btn btn-lg btn-color" value="عضویت">
+                                    <input type="submit" class="btn btn-lg btn-color" value="عضویت" disabled>
                                 </div>
                             </div>
                         </form>

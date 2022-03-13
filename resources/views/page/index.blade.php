@@ -60,7 +60,7 @@
                                                 </a>
                                             </li>
                                             <li class="entry__meta-date">
-                                                {{ $page->created_at }}
+                                                {{ $page->created_at->diffForHumans() }}
                                             </li>
                                         </ul>
                                     </div>
@@ -110,7 +110,7 @@
                                                 <a href="#">{{ $user->name }}</a>
                                             </li>
                                             <li class="entry__meta-date">
-                                                {{ $page->created_at }}
+                                                {{ $page->created_at->diffForHumans() }}
                                             </li>
                                         </ul>
                                     </div>
