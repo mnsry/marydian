@@ -22,11 +22,11 @@
         <!-- post content -->
         <div class="blog__content mb-72">
             <h1 class="page-title">درباره ما</h1>
-            <img src="{{ Voyager::Image(setting('aboute.about_banner')) }}" class="page-featured-img" alt="">
+            <img src="{{ Voyager::Image(setting('about.about_banner')) }}" class="page-featured-img" alt="">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="entry__article">
-                        {!! setting('aboute.about') !!}
+                        {!! setting('about.about') !!}
                     </div>
                 </div>
             </div>
