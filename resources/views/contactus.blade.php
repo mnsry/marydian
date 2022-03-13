@@ -23,19 +23,13 @@
         <div class="blog__content mb-72">
             <h1 class="page-title">تماس با ما</h1>
 
-            <img src="{{ asset('assets/img/page/contactus_map.png') }}" class="page-featured-img" alt="">
+            <img src="{{ Voyager::Image(setting('contact.contact_banner')) }}" class="page-featured-img" alt="">
 
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <h4>با ما تماس بگیرید</h4>
-                    <p>برای هرگونه انتقاد و پیشنهاد و هرگونه ارتباط با ما می توانید از طریق فرم زیر با ما در تماس باشید.</p>
-                    <ul class="contact-items">
-                        <li class="contact-item">
-                            <address>استان مرکزی - اراک مهاجران</address>
-                        </li>
-                        <li class="contact-item"><a href="#">09181234567</a></li>
-                        <li class="contact-item"><a href="mailto:topkala@gmail.com">mardian@gmail.com</a></li>
-                    </ul>
+
+                    {!! setting('contact.contact') !!}
 
                     <!-- Contact Form -->
                     <form id="contact-form" class="contact-form mt-30 mb-30" method="post" action="#">
