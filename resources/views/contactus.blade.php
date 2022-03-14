@@ -34,6 +34,7 @@
                     <!-- Contact Form -->
                     <form id="contact-form" class="contact-form mt-30 mb-30" method="post" action="{{ route('contactus.create') }}">
                         @csrf
+                        
                         <div class="contact-name">
                             <label for="name">نام <abbr title="required" class="required">*</abbr></label>
                             <input name="name" id="name" type="text" required>
