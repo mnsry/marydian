@@ -111,8 +111,9 @@
                                     @php
                                         $file = json_decode($post->pdf)[0];
                                         $file_path = $file->download_link;
+                                        $file_name = $file->original_name;
                                     @endphp
-                                    <a href="{{ Voyager::image($file_path) }}">دانلود فایل</a>
+                                    <a href="{{ Voyager::image($file_path) }}" title="{{$file_name}}">دانلود فایل</a>
                                 </h6>
                                 <p class="mb-0">
                                     توجه داشته باشید : با دانلود هر فایل جدید مبلغ حساب شما کسر خواهد شد
