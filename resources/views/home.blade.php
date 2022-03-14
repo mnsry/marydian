@@ -104,7 +104,7 @@
                 <aside class="widget widget-rating-posts">
                     <h4 class="widget-title">منتخب مقالات</h4>
                     @php
-                        $pages = \TCG\Voyager\Models\Page::all();
+                        $pages = \TCG\Voyager\Models\Page::inRandomOrder()->limit(2)->get();
                     @endphp
                     @foreach($pages as $page)
                         <article class="entry">
