@@ -9,7 +9,7 @@
                             <img src="{{ Voyager::Image(setting('site.logo')) }}" class="logo__img" alt="">
                         </a>
                         <p class="copyright">
-                            سایت دانش یار برای کمک به شما عزیزان در ضمینه حل تمرین و دانلود دروس و نمونه سوالات امتحانی و هرگونه راهنمایی برای شما دوستان ساخته شده است تا شما بتوانید هر ساعت از شبانه روز با ما در ارتباط باشید و راهنمایی کامل را کسب کنید.
+                            {{ setting('site.footer') }}
                         </p>
                         <div class="socials socials--large socials--rounded mb-24">
                             <a href="#" class="social social-facebook" aria-label="facebook"><i class="ui-facebook"></i></a>
