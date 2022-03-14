@@ -40,6 +40,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('category/{category}', function (\TCG\Voyager\Models\Category $category) {
+    return view('post.category', ['category'=>$category]);
+})->name('category')->middleware('auth');
+
 Route::get('post/{post}', function (\TCG\Voyager\Models\Post $post) {
     return view('post.show', [ 'post'=>$post]);
 })->name('post.show')->middleware('auth');

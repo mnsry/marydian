@@ -21,51 +21,51 @@
                         <a href="#" class="all-posts-url">{{ auth()->user()->name }}</a>
                     </div>
                     @php
-                        $posts = \TCG\Voyager\Models\Post::all();
+                        $posts = \TCG\Voyager\Models\Post::where('category_id', $category->id)->get();
                     @endphp
                     @foreach($posts as $post)
                         <article class="entry card post-list">
 
-                        <div class="entry__img-holder post-list__img-holder card__img-holder" style="background-image: url({{ Voyager::Image($post->image) }})">
-                            <a href="{{ route('post.show', $post) }}" class="thumb-url"></a>
-                            <img src="{{ Voyager::Image($post->image) }}" alt="" class="entry__img d-none">
-                            @php
-                                $category = \TCG\Voyager\Models\Category::where('id', $post->category_id)->first();
-                            @endphp
-                            <a href="{{ route('category', $category) }}" class="entry__meta-category entry__meta-category--label entry__meta-category--align-in-corner entry__meta-category--blue">
-                                {{ $category->name }}
-                            </a>
-                        </div>
+                            <div class="entry__img-holder post-list__img-holder card__img-holder" style="background-image: url({{ Voyager::Image($post->image) }})">
+                                <a href="{{ route('post.show', $post) }}" class="thumb-url"></a>
+                                <img src="{{ Voyager::Image($post->image) }}" alt="" class="entry__img d-none">
+                                @php
+                                    $category = \TCG\Voyager\Models\Category::where('id', $post->category_id)->first();
+                                @endphp
+                                <a href="{{ route('category', $category) }}" class="entry__meta-category entry__meta-category--label entry__meta-category--align-in-corner entry__meta-category--blue">
+                                    {{ $category->name }}
+                                </a>
+                            </div>
 
-                        <div class="entry__body post-list__body card__body">
-                            <div class="entry__header">
-                                <h2 class="entry__title">
-                                    <a href="{{ route('post.show', $post) }}">
-                                        {{ $post->title }}
-                                    </a>
-                                </h2>
-                                <ul class="entry__meta">
-                                    <li class="entry__meta-author">
-                                        <span>نویسنده:</span>
-                                        <a href="#">
-                                            @php
-                                                $user = \App\Models\User::where('id', $post->author_id)->first();
-                                            @endphp
-                                            {{ $user->name }}
+                            <div class="entry__body post-list__body card__body">
+                                <div class="entry__header">
+                                    <h2 class="entry__title">
+                                        <a href="{{ route('post.show', $post) }}">
+                                            {{ $post->title }}
                                         </a>
-                                    </li>
-                                    <li class="entry__meta-date">
-                                        {{ $post->created_at->diffForHumans() }}
-                                    </li>
-                                </ul>
+                                    </h2>
+                                    <ul class="entry__meta">
+                                        <li class="entry__meta-author">
+                                            <span>نویسنده:</span>
+                                            <a href="#">
+                                                @php
+                                                    $user = \App\Models\User::where('id', $post->author_id)->first();
+                                                @endphp
+                                                {{ $user->name }}
+                                            </a>
+                                        </li>
+                                        <li class="entry__meta-date">
+                                            {{ $post->created_at->diffForHumans() }}
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="entry__excerpt">
+                                    <p>
+                                        {{ $post->excerpt }}
+                                    </p>
+                                </div>
                             </div>
-                            <div class="entry__excerpt">
-                                <p>
-                                    {{ $post->excerpt }}
-                                </p>
-                            </div>
-                        </div>
-                    </article>
+                        </article>
                     @endforeach
                 </section> <!-- end worldwide news -->
 
