@@ -103,6 +103,19 @@
                             </div> <!-- end entry article -->
                         </div> <!-- end entry article wrap -->
 
+                        <!-- PDF -->
+                        <div class="entry-author clearfix">
+                            <img alt="" data-src="{{ asset('assets/img/pdf.png') }}" src="{{ asset('assets/img/pdf.png') }}" class="avatar lazyload">
+                            <div class="entry-author__info">
+                                <h6 class="entry-author__name">
+                                    <a href="#">دانلود فایل</a>
+                                </h6>
+                                <p class="mb-0">
+                                    توجه داشته باشید : با دانلود هر فایل جدید مبلغ حساب شما کسر خواهد شد
+                                </p>
+                            </div>
+                        </div>
+
                     </article> <!-- end standard post -->
 
                     <!-- Comment Form -->
