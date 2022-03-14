@@ -115,9 +115,7 @@
                                     @endphp
                                     <a href="{{ Voyager::image($file_path) }}" title="{{$file_name}}">دانلود فایل</a>
                                 </h6>
-                                <p class="mb-0">
-                                    توجه داشته باشید : با دانلود هر فایل مبلغ حساب شما کسر خواهد شد و برای دانلود مجدد فایل باز هم مبلغ حساب شما کسر خواهد شد
-                                </p>
+                                <p class="mb-0">{{ setting('site.text_download') }}</p>
                             </div>
                         </div>
 
