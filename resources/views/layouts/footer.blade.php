@@ -42,15 +42,19 @@
                             <i class="ui-email newsletter__icon"></i>
                             برای اطلاع از آخرین خبرها مشترک شوید
                         </p>
-                        <form class="mc4wp-form" method="post">
+                        <form class="mc4wp-form" method="post" action="{{ route('mobile') }}">
+                            @csrf
                             <div class="mc4wp-form-fields">
                                 <div class="form-group">
-                                    <input type="email" name="EMAIL" placeholder="ایمیل" required="">
+                                    <input type="number" name="mobile" placeholder="شماره موبایل">
                                 </div>
                                 <div class="form-group">
-                                    <input type="submit" class="btn btn-lg btn-color" value="عضویت" disabled>
+                                    <input type="submit" class="btn btn-lg btn-color" value="عضویت">
                                 </div>
                             </div>
+                            @error('mobile')
+                                <span class="alert-danger">{{ $message }}</span>
+                            @enderror
                         </form>
                     </aside>
                 </div>
