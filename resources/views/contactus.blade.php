@@ -32,26 +32,26 @@
                     {!! setting('contact.contact') !!}
 
                     <!-- Contact Form -->
-                    <form id="contact-form" class="contact-form mt-30 mb-30" method="post" action="#">
+                    <form id="contact-form" class="contact-form mt-30 mb-30" method="post" action="{{ route('contactus.create') }}">
+                        @csrf
                         <div class="contact-name">
                             <label for="name">نام <abbr title="required" class="required">*</abbr></label>
-                            <input name="name" id="name" type="text">
+                            <input name="name" id="name" type="text" required>
                         </div>
                         <div class="contact-email">
-                            <label for="email">ایمیل <abbr title="required" class="required">*</abbr></label>
-                            <input name="email" id="email" type="email">
+                            <label for="mobile">موبایل <abbr title="required" class="required">*</abbr></label>
+                            <input name="mobile" id="mobile" type="number" required>
                         </div>
                         <div class="contact-subject">
-                            <label for="email">موضوع</label>
-                            <input name="subject" id="subject" type="text">
+                            <label for="content">موضوع</label>
+                            <input name="content" id="content" type="text">
                         </div>
                         <div class="contact-message">
-                            <label for="message">پیام <abbr title="required" class="required">*</abbr></label>
-                            <textarea id="message" name="message" rows="7" required="required"></textarea>
+                            <label for="text">پیام <abbr title="required" class="required">*</abbr></label>
+                            <textarea id="text" name="text" rows="7" required="required"></textarea>
                         </div>
 
-                        <input type="submit" class="btn btn-lg btn-color btn-button" value="فرستادن" id="submit-message">
-                        <div id="msg" class="message"></div>
+                        <input type="submit" class="btn btn-lg btn-color btn-button" value="فرستادن">
                     </form>
 
                 </div>

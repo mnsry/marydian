@@ -18,6 +18,11 @@ Route::get('contactus', function () {
     return view('contactus');
 })->name('contactus');
 
+Route::post('contactus', function (\Illuminate\Http\Request $request) {
+    \App\Models\Contact::create($request->all());
+    return back();
+})->name('contactus.create');
+
 Route::get('aboutme', function () {
     return view('aboutme');
 })->name('aboutme');
