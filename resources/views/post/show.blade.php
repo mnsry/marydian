@@ -123,90 +123,82 @@
 
                     </article> <!-- end standard post -->
 
-                    <!-- Comment Form -->
-                    <div id="respond" class="comment-respond">
-                        <div class="title-wrap">
-                            <h5 class="comment-respond__title section-title">دیدگاه شما</h5>
-                        </div>
-                        <form id="form" class="comment-form" method="post" action="#">
-                            <p class="comment-form-comment">
-                                <label for="comment">دیدگاه</label>
-                                <textarea id="comment" name="comment" rows="5" required="required"></textarea>
-                            </p>
-
-                            <div class="row row-20">
-                                <div class="col-lg-4">
-                                    <label for="name">نام: *</label>
-                                    <input name="name" id="name" type="text">
-                                </div>
-                                <div class="col-lg-4">
-                                    <label for="comment">ایمیل: *</label>
-                                    <input name="email" id="email" type="email">
-                                </div>
-                                <div class="col-lg-4">
-                                    <label for="comment">موبایل:</label>
-                                    <input name="website" id="website" type="text">
-                                </div>
-                            </div>
-
-                            <p class="comment-form-submit">
-                                <input type="submit" class="btn btn-lg btn-color btn-button" value="ارسال دیدگاه" id="submit-message" disabled>
-                            </p>
-
-                        </form>
-                    </div> <!-- end comment form -->
-
                 </div> <!-- end content box -->
             </div> <!-- end post content -->
 
             <!-- Sidebar -->
-            <aside class="col-lg-4 sidebar sidebar--right">
+            <aside class="col-lg-4 sidebar sidebar--1 sidebar--right">
 
-                <!-- Widget Popular Posts -->
-                <aside class="widget widget-popular-posts">
-                    <h4 class="widget-title">محبوب ترین مقالات</h4>
-                    <ul class="post-list-small">
+                <!-- Widget Categories -->
+                <aside class="widget widget_categories">
+                    <h4 class="widget-title">دسته بندی نوشته ها</h4>
+                    <ul>
                         @php
-                            $pages = \TCG\Voyager\Models\Page::all();
+                            $categories = \TCG\Voyager\Models\Category::all();
                         @endphp
-                        @foreach($pages as $page)
-                            <li class="post-list-small__item">
-                                <article class="post-list-small__entry clearfix">
-                                    <div class="post-list-small__img-holder">
-                                        <div class="thumb-container thumb-100">
-                                            <a href="{{ route('page.show', $page) }}">
-                                                <img data-src="{{ Voyager::Image($page->image) }}" src="{{ Voyager::Image($page->image) }}" alt="" class="post-list-small__img--rounded lazyload">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="post-list-small__body">
-                                        <h3 class="post-list-small__entry-title">
-                                            <a href="{{ route('page.show', $page) }}">{{ $page->excerpt }}</a>
-                                        </h3>
-                                        <ul class="entry__meta">
-                                            <li class="entry__meta-author">
-                                                <span>نویسنده:</span>
-                                                <a href="#">
-                                                    @php
-                                                        $user = \App\Models\User::where('id', $page->author_id)->first();
-                                                    @endphp
-                                                    {{ $user->name }}
-                                                </a>
-                                            </li>
-                                            <li class="entry__meta-date">
-                                                {{ $page->created_at->diffForHumans() }}
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </article>
+                        @foreach($categories as $category)
+                            <li>
+                                <a href="{{ route('category', $category) }}">
+                                    {{ $category->name }}
+                                    <span class="categories-count">
+                                        @php
+                                            $posts = \TCG\Voyager\Models\Post::where('category_id', $category->id)->get();
+                                        @endphp
+                                        {{ $posts->count() }}
+                                    </span>
+                                </a>
                             </li>
                         @endforeach
                     </ul>
-                </aside> <!-- end widget popular posts -->
+                </aside> <!-- end widget categories -->
 
-            </aside> <!-- end sidebar -->
+                <!-- Widget Recommended (Rating) -->
+                <aside class="widget widget-rating-posts">
+                    <h4 class="widget-title">منتخب مقالات</h4>
+                    @php
+                        $pages = \TCG\Voyager\Models\Page::inRandomOrder()->limit(2)->get();
+                    @endphp
+                    @foreach($pages as $page)
+                        <article class="entry">
+                            <div class="entry__img-holder">
+                                <a href="{{ route('page.show', $page) }}">
+                                    <div class="thumb-container thumb-60">
+                                        <img data-src="{{ Voyager::Image($page->image) }}" src="{{ Voyager::Image($page->image) }}" class="entry__img lazyload" alt="">
+                                    </div>
+                                </a>
+                            </div>
 
-        </div> <!-- end content -->
-    </div> <!-- end main container -->
+                            <div class="entry__body">
+                                <div class="entry__header">
+
+                                    <h2 class="entry__title">
+                                        <a href="{{ route('page.show', $page) }}">
+                                            {{ $page->excerpt }}
+                                        </a>
+                                    </h2>
+                                    <ul class="entry__meta">
+                                        <li class="entry__meta-author">
+                                            <span>نویسنده:</span>
+                                            <a href="#">
+                                                @php
+                                                    $user = \App\Models\User::where('id', $page->author_id)->first();
+                                                @endphp
+                                                {{ $user->name }}
+                                            </a>
+                                        </li>
+                                        <li class="entry__meta-date">
+                                            {{ $page->created_at->diffForHumans() }}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+                    @endforeach
+
+                </aside> <!-- end widget recommended (rating) -->
+
+            </aside> <!-- end sidebar 1 -->
+
+        </div> <!-- end main container -->
 
 @endsection

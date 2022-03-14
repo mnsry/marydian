@@ -104,40 +104,6 @@
                     </div> <!-- end entry article wrap -->
 
                 </article> <!-- end standard post -->
-
-                <!-- Comment Form -->
-                <div id="respond" class="comment-respond">
-                    <div class="title-wrap">
-                        <h5 class="comment-respond__title section-title">دیدگاه شما</h5>
-                    </div>
-                    <form id="form" class="comment-form" method="post" action="#">
-                        <p class="comment-form-comment">
-                            <label for="comment">دیدگاه</label>
-                            <textarea id="comment" name="comment" rows="5" required="required"></textarea>
-                        </p>
-
-                        <div class="row row-20">
-                            <div class="col-lg-4">
-                                <label for="name">نام: *</label>
-                                <input name="name" id="name" type="text">
-                            </div>
-                            <div class="col-lg-4">
-                                <label for="comment">ایمیل: *</label>
-                                <input name="email" id="email" type="email">
-                            </div>
-                            <div class="col-lg-4">
-                                <label for="comment">موبایل:</label>
-                                <input name="website" id="website" type="text">
-                            </div>
-                        </div>
-
-                        <p class="comment-form-submit">
-                            <input type="submit" class="btn btn-lg btn-color btn-button" value="ارسال دیدگاه" id="submit-message" disabled>
-                        </p>
-
-                    </form>
-                </div> <!-- end comment form -->
-
             </div> <!-- end content box -->
         </div> <!-- end post content -->
 
@@ -149,7 +115,7 @@
                 <h4 class="widget-title">محبوب ترین مقالات</h4>
                 <ul class="post-list-small">
                     @php
-                        $pages = \TCG\Voyager\Models\Page::all();
+                        $pages = \TCG\Voyager\Models\Page::inRandomOrder()->limit(2)->get();
                     @endphp
                     @foreach($pages as $page)
                         <li class="post-list-small__item">

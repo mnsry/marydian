@@ -120,14 +120,6 @@
                     </ul>
                 </aside> <!-- end widget popular posts -->
 
-                <!-- Widget Ad 300 -->
-{{--                <aside class="widget widget_media_image">--}}
-{{--                    <a href="#">--}}
-{{--                        <img src="{{ asset('assets/img/content/mag-1.jpg') }}" alt="">--}}
-{{--                    </a>--}}
-{{--                </aside>--}}
-                <!-- end widget ad 300 -->
-
             </aside> <!-- end sidebar -->
 
         </div> <!-- end content -->
