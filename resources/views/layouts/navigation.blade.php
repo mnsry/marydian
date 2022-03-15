@@ -110,6 +110,12 @@
                                 <a href="{{route('home')}}">{{ Auth::user()->name }}</a>
                                 <ul class="nav__dropdown-menu">
                                     <li>
+                                        <a class="dropdown-item" href="{{ route('home') }}">
+                                            نمایش پست ها
+                                        </a>
+                                    </li>
+
+                                    <li>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -134,16 +140,20 @@
                     <!-- Search -->
                     <div class="nav__right-item nav__search">
                         <a href="#" class="nav__search-trigger" id="nav__search-trigger">
-                            <i class="ui-search nav__search-trigger-icon"></i>
+                            <i class="ui-eye"></i>
                         </a>
-                        <div class="nav__search-box" id="nav__search-box">
-                            <form class="nav__search-form">
-                                <input type="text" placeholder="جستجو مقالات" class="nav__search-input">
-                                <button type="submit" class="search-button btn btn-lg btn-color btn-button">
-                                    <i class="ui-search nav__search-icon"></i>
-                                </button>
-                            </form>
-                        </div>
+                        @guest
+                            <div class="nav__search-box text-center" id="nav__search-box">
+                                <a href="{{ route('login') }}">ابتدا به سیستم وارد شوید</a>
+                            </div>
+                        @else
+                            <div class="nav__search-box text-center" id="nav__search-box">
+                                موجودی حساب شما :
+                                {{ Auth::user()->many }}
+                                تومان
+                            </div>
+                        @endguest
+
                     </div>
 
                 </div> <!-- end nav right -->

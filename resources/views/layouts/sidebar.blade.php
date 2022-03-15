@@ -32,6 +32,11 @@
                     <button class="sidenav__menu-toggle" aria-haspopup="true" aria-label="Open dropdown"><i class="ui-arrow-down"></i></button>
                     <ul class="sidenav__menu-dropdown">
                         <li>
+                            <a class="sidenav__menu-url" href="{{ route('home') }}">
+                                نمایش پست ها
+                            </a>
+                        </li>
+                        <li>
                             <a class="sidenav__menu-url" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
