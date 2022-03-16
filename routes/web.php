@@ -8,12 +8,12 @@ Route::get('/', function () {
 
 Route::post('mobile', function (\Illuminate\Http\Request $request) {
     $request->validate(
-        ['mobile' => 'required|unique:mobiles|digits:11'],
+        ['mobile_new' => 'required|unique:mobiles|digits:11'],
         ['required' => 'نباید فرم خالی باشد', 'unique' => 'این شماره قبلا ثبت شده', 'digits' => 'شماره باید با صفر وارد شود و بیش از 11 رقم نباشد',]
     );
-    \App\Models\Mobile::create($request->all());
+    \App\Models\Mobile::create(['mobile_new' => $request->mobile_new]);
     return back();
-})->name('mobile');
+})->name('mobile.new');
 
 Route::get('page', function () {
     return view('page.index');

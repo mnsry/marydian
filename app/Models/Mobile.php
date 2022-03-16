@@ -9,5 +9,5 @@ class Mobile extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['mobile'];
+    protected $fillable = ['mobile_new'];
 }
