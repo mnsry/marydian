@@ -63,7 +63,7 @@ Route::get('download/{post}', function (\TCG\Voyager\Models\Post $post) {
     $file = json_decode($post->pdf)[0];
     $file_path = $file->download_link;
     return redirect(Voyager::image($file_path));
-})->name('download')->middleware('auth');
+})->name('download.post')->middleware('auth');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
