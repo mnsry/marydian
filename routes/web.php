@@ -48,10 +48,6 @@ Route::get('post/{post}', function (\TCG\Voyager\Models\Post $post) {
     return view('post.show', [ 'post'=>$post]);
 })->name('post.show')->middleware('auth');
 
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
-
 Route::get('download/{post}', function (\TCG\Voyager\Models\Post $post) {
     $user = auth()->user();
     $pay = $user->many - setting('site.price_download');
@@ -68,3 +64,7 @@ Route::get('download/{post}', function (\TCG\Voyager\Models\Post $post) {
     $file_path = $file->download_link;
     return redirect(Voyager::image($file_path));
 })->name('download')->middleware('auth');
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

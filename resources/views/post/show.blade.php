@@ -116,7 +116,7 @@
                             <img alt="" data-src="{{ asset('assets/img/pdf.png') }}" src="{{ asset('assets/img/pdf.png') }}" class="avatar lazyload">
                             <div class="entry-author__info">
                                 <p class="entry-author__name">
-{{--                                    <a class="alert-danger" href="{{ route('download', $post) }}">دانلود فایل</a>--}}
+                                    <a class="alert-danger" href="{{ route('download', $post) }}">دانلود فایل</a>
                                 </p>
                                 @if(Session::has('message'))
                                     <p class="alert-warning">{{ Session::get('message') }}</p>
