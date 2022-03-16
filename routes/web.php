@@ -51,3 +51,21 @@ Route::get('post/{post}', function (\TCG\Voyager\Models\Post $post) {
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Route::get('download/{post}', function (\TCG\Voyager\Models\Post $post) {
+    $user = auth()->user();
+    $pay = $user->many - setting('site.price_download');
+
+    if ( $pay >= 0) {
+        $user->many = $pay;
+        $user->save();
+    } else {
+        Session::flash('message', 'موجودی کافی نیست !');
+        return back();
+    }
+
+    $file = json_decode($post->pdf)[0];
+    $file_path = $file->download_link;
+    
+    return redirect(Voyager::image($file_path));
+})->name('download')->middleware('auth');

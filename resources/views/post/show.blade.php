@@ -21,6 +21,14 @@
         </ul>
     </div>
 
+    <div class="container">
+        <div class="row justify-content-center">
+            @if(Session::has('message'))
+                <h4 class="alert">{{ Session::get('message') }}</h4>
+            @endif
+        </div>
+    </div>
+
     <div class="main-container container" id="main-container">
 
         <!-- Content -->
@@ -107,14 +115,12 @@
                         <div class="entry-author clearfix">
                             <img alt="" data-src="{{ asset('assets/img/pdf.png') }}" src="{{ asset('assets/img/pdf.png') }}" class="avatar lazyload">
                             <div class="entry-author__info">
-                                <h6 class="entry-author__name">
-                                    @php
-                                        $file = json_decode($post->pdf)[0];
-                                        $file_path = $file->download_link;
-                                        $file_name = $file->original_name;
-                                    @endphp
-                                    <a class="alert-danger" href="{{ Voyager::image($file_path) }}" title="{{$file_name}}">دانلود فایل</a>
-                                </h6>
+                                <p class="entry-author__name">
+                                    <a class="alert-danger" href="{{ route('download', $post) }}">دانلود فایل</a>
+                                </p>
+                                @if(Session::has('message'))
+                                    <p class="alert-warning">{{ Session::get('message') }}</p>
+                                @endif
                                 <p class="mb-0">{{ setting('site.text_download') }}</p>
                             </div>
                         </div>
