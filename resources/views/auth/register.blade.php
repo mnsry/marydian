@@ -17,47 +17,42 @@
 
                     <div class="contact-email">
                         <label for="name">نام <abbr title="required" class="required">*</abbr></label>
-                        <input name="name" id="name" type="text" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                        @error('name')
-                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                        @enderror
+                        <input name="name" id="name" type="text" value="{{ old('name') }}" required>
                     </div>
 
                     <div class="contact-email">
                         <label for="email"> ایمیل</label>
-                        <input name="email" id="email" type="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" autocomplete="email" autofocus placeholder="این فیلد الزامی نیست">
-                        @error('email')
-                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                        @enderror
+                        <input name="email" id="email" type="email" value="{{ old('email') }}" placeholder="این فیلد الزامی نیست">
+                        <div class="pb-3" style="color: red">
+                            @error('email')
+                            {{ $message }}
+                            @enderror
+                        </div>
                     </div>
 
                     <div class="contact-email">
                         <label for="mobile">موبایل <abbr title="required" class="required">*</abbr></label>
-                        <input name="mobile" id="mobile" type="number" class="form-control @error('mobile') is-invalid @enderror" value="{{ old('mobile') }}" required autocomplete="mobile" autofocus>
-                        @error('mobile')
-                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                        @enderror
+                        <input name="mobile" id="mobile" type="number" value="{{ old('mobile') }}" required>
+                        <div class="pb-3" style="color: red">
+                            @error('mobile')
+                            {{ $message }}
+                            @enderror
+                        </div>
                     </div>
 
                     <div class="contact-subject">
                         <label for="password">پسورد <abbr title="required" class="required">*</abbr></label>
-                        <input name="password" id="password" type="password" class="form-control @error('password') is-invalid @enderror" required autocomplete="new-password">
-                        @error('password')
-                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                        @enderror
+                        <input name="password" id="password" type="password" required>
+                        <div class="pb-3" style="color: red">
+                            @error('password')
+                            {{ $message }}
+                            @enderror
+                        </div>
                     </div>
 
                     <div class="contact-subject">
                         <label for="password-confirm">تکرار پسورد <abbr title="required" class="required">*</abbr></label>
-                        <input name="password_confirmation" id="password-confirm" type="password" class="form-control @error('password') is-invalid @enderror" required autocomplete="new-password">
+                        <input name="password_confirmation" id="password-confirm" type="password" required>
                     </div>
 
                     <input type="submit" class="btn btn-lg btn-color btn-button" value="ثبت نام">

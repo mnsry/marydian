@@ -49,12 +49,22 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['unique:users'],
-            'mobile' => ['required', 'string', 'digits:11', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+        return Validator::make($data,
+            [
+                'name' => 'required|string|max:255',
+                'email' => 'unique:users',
+                'mobile' => 'required|string|digits:11|unique:users',
+                'password' => 'required|string|min:8|confirmed',
+            ],
+            [
+                'required' => 'نباید فرم خالی باشد',
+                'unique' => 'این قبلا ثبت شده',
+                'digits' => 'شماره باید با صفر وارد شود و بیش از 11 رقم نباشد',
+                'min' => 'حداقل باید 8 رقم باشد',
+                'confirmed' => 'پسورد یکسان وارد نشده',
+            ]
+
+        );
     }
 
     /**

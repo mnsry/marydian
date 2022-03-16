@@ -17,23 +17,20 @@
 
                     <div class="contact-email">
                         <label for="mobile">موبایل <abbr title="required" class="required">*</abbr></label>
-                        <input name="mobile" id="mobile" type="number" class="form-control @error('mobile') is-invalid @enderror" value="{{ old('mobile') }}" required autocomplete="mobile" autofocus>
-                        @error('mobile')
-                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                        @enderror
+                        <input name="mobile" id="mobile" type="number" value="{{ old('mobile') }}" required>
+
                     </div>
 
                     <div class="contact-subject">
                         <label for="password">پسورد <abbr title="required" class="required">*</abbr></label>
-                        <input name="password" id="password" type="password" class="form-control @error('password') is-invalid @enderror" required autocomplete="current-password">
-                        @error('password')
-                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                        @enderror
+                        <input name="password" id="password" type="password" required>
                     </div>
+
+                    @error('mobile')
+                        <div class="contact-subject pb-4" style="color: red">
+                            {{ $message }}
+                        </div>
+                    @enderror
 
                     <input type="submit" class="btn btn-lg btn-color btn-button" value="ورود به سیستم">
 

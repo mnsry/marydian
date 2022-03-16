@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
 {
@@ -41,5 +42,12 @@ class LoginController extends Controller
     public function username()
     {
         return 'mobile';
+    }
+
+    public function sendFailedLoginResponse()
+    {
+        throw ValidationException::withMessages([
+            $this->username() => ['اطلاعات نادرست است.'],
+        ]);
     }
 }
