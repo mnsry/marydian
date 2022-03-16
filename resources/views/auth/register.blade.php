@@ -1,4 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.master')
+
+@section('description', setting('site.description'))
+@section('keywords', setting('site.keywords'))
+@section('title', setting('site.title'))
 
 @section('content')
 <div class="container">
